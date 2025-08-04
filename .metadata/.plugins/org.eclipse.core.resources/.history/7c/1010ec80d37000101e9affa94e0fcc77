@@ -1,0 +1,22 @@
+package com.fastcampus.ch2;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// 1. 원격호출 가능한 프로그램으로 등록
+@Controller
+public class Hello {
+	int iv = 10; // instance 변수
+	static int cv = 20; // static 변수
+	
+	// 2. URL과 method 연결
+	@RequestMapping("/hello")
+	public void main() { // instance method - iv, cv 둘 다 可以
+		System.out.println("Hello:)");
+	}
+	
+	public static void main2() { // static method - cv만 可以
+		System.out.println(cv); // ok
+//		System.out.println(iv); // error
+	}
+}

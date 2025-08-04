@@ -1,0 +1,4 @@
+INDEX VERSION 1.4+D:\fastcampus-스프링의_정석\spring_basic\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4006255559.index
+3518962449.index
+2415766096.index
