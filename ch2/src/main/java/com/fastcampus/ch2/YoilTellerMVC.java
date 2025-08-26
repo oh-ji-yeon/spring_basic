@@ -5,7 +5,9 @@ import java.util.Calendar;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 // 년월일을 입력하면 요일을 알려주는 프로그램
@@ -17,7 +19,7 @@ public class YoilTellerMVC { // http://localhost/ch2/getYoilMVC?year=2021&month=
 	public String main(int year, int month, int day, Model model) throws IOException {
 //	public void main(int year, int month, int day, Model model) throws IOException { // mapping url에 의해 view 이름 결정
 //	public ModelAndView main(int year, int month, int day) throws IOException { // model+view
-		ModelAndView mv = new ModelAndView();
+//		ModelAndView mv = new ModelAndView();
 
 		// 1. 유효성 검사
 		if (!isValid(year, month, day))
@@ -25,7 +27,7 @@ public class YoilTellerMVC { // http://localhost/ch2/getYoilMVC?year=2021&month=
 
 		// 2. 요일 계산
 		char yoil = getYoil(year, month, day);
-		
+
 		// 3. model에 결과 저장
 		model.addAttribute("year", year);
 		model.addAttribute("month", month);
@@ -35,9 +37,9 @@ public class YoilTellerMVC { // http://localhost/ch2/getYoilMVC?year=2021&month=
 //		mv.addObject("month", month);
 //		mv.addObject("day", day);
 //		mv.addObject("yoil", yoil);
-		
+
 		return "yoil"; // /WEB-INF/views/yoil.jsp
-		
+
 		// 4. 결과를 보여줄 view 지정
 //		mv.setViewName("yoil");
 //		
@@ -45,7 +47,6 @@ public class YoilTellerMVC { // http://localhost/ch2/getYoilMVC?year=2021&month=
 	}
 
 	private boolean isValid(int year, int month, int day) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
